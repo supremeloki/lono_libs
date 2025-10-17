@@ -5,6 +5,20 @@ API Reference
 
 This section provides an auto-generated reference for the `lono_libs` package.
 
+Evaluator
+---------
+.. automodule:: lono_libs.core.evaluator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Score Aggregator
+----------------
+.. automodule:: lono_libs.core.scoring
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 UnifiedRunner
 -------------
 .. automodule:: lono_libs.unified_runner
