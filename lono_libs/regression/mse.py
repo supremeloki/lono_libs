@@ -1,0 +1,66 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+from sklearn.model_selection import train_test_split
+from lono_libs import UnifiedRunner, MSE
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.float_format', '{:.4f}'.format)
+np.random.seed(42)
+num_samples = 200
+num_features = 5
+X = pd.DataFrame(np.random.rand(num_samples, num_features) * 100, columns=[f'feature_{i}' for i in range(num_features)])
+y_class = pd.Series(np.random.choice(['A', 'B', 'C'], num_samples))
+y_reg = pd.Series(np.random.rand(num_samples) * 10 + X['feature_0'] * 0.5 + X['feature_1'] * 0.2 + np.random.randn(num_samples) * 2)
+X_train, X_test, y_train_class, y_test_class, y_train_reg, y_test_reg = train_test_split(
+    X, y_class, y_reg, test_size=0.3, random_state=42
+)
+target_mse_score = 0.01
+preprocessing_config = {
+    "add_polynomial_features": True,
+    "poly_degree": 2,
+    "apply_scaler": True
+}
+metric_target_overrides = {
+    "MSE": target_mse_score
+}
+runner = UnifiedRunner(
+    output_base_dir="lono_results_mse_example",
+    enable_logging=True,
+    enable_visualizations=True,
+    target_score_overrides=metric_target_overrides,
+)
+print("Starting LONO_LIBS UnifiedRunner pipeline execution...")
+full_results_df, best_models_by_metric = runner.run_pipeline(
+    X_train=X_train,
+    X_test=X_test,
+    y_train_class=y_train_class,
+    y_test_class=y_test_class,
+    y_train_reg=y_train_reg,
+    y_test_reg=y_test_reg,
+    preprocessing_config=preprocessing_config,
+    metrics_to_evaluate=["MSE"]
+)
+print("\n--- LONO_LIBS Pipeline Execution Complete ---")
+runner.generate_reports_and_visualizations(
+    full_results_df=full_results_df,
+    best_models_by_metric=best_models_by_metric
+)
+print("\n--- Reports and Visualizations Generated (Check 'lono_results_mse_example' directory) ---")
+print("\nMSE Model Performance Comparison (from UnifiedRunner results):")
+print("=" * 100)
+mse_results_df = full_results_df[full_results_df['metric_name'] == 'MSE']
+print(mse_results_df[['Model', 'Type', 'Training Score', 'Testing Score', 'Difference', 'Score_Difference_From_Target']].to_string(index=False))
+print("=" * 100)
+if 'MSE' in best_models_by_metric and not best_models_by_metric['MSE'].empty:
+    best_mse_model = best_models_by_metric['MSE'].iloc[0]
+    print(f"\nBest MSE Overall Model (Closest to {best_mse_model['target_score']:.4f}):")
+    print(f"Model: {best_mse_model['Model']} ({best_mse_model['Type']})")
+    print(f"Testing Score: {best_mse_model['Testing Score']:.4f}")
+    if 'Score_Difference_From_Target' in best_mse_model:
+        print(f"Difference from target ({best_mse_model['target_score']:.4f}): {best_mse_model['Score_Difference_From_Target']:.4f}")
+else:
+    print("\nNo best MSE model found in the results.")
+print("\nExecution Finished. Check the 'lono_results_mse_example' directory for detailed reports and plots.")
