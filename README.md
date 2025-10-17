@@ -18,23 +18,19 @@ A lightweight and modular Python library for comprehensive machine learning mode
 
 ## 🚧 Structure
 
+```
 lono_libs/
 ├── .flake8
 ├── .gitattributes
 ├── .gitignore
-├── .mypy_cache/
-├── .vscode/
 ├── LICENSE
 ├── pyproject.toml
 ├── README.md
 ├── requirements.txt
 ├── run_all_tests.py
 ├── run_evaluation.py
-├── uv.lock
 ├── docs/
 │   ├── __init__.py
-│   ├── _static/
-│   ├── _templates/
 │   ├── api.rst
 │   ├── conf.py
 │   ├── examples.rst
@@ -83,7 +79,6 @@ lono_libs/
 │       ├── r2_score.py
 │       └── skewness.py
 └── tests/
-    ├── .mypy_cache/
     ├── Accuracy_mock.py
     ├── IMetric_mock.py
     ├── UnifiedRunner_mock.py
@@ -110,7 +105,7 @@ lono_libs/
         ├── test_mse.py
         ├── test_r2_score.py
         └── test_skewness.py
-        
+```
 ## 📦 Installation
 
 ### From PyPI
