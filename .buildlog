@@ -1,2 +1,3 @@
 2025-10-17T20:57:52 initial package layout
 2025-10-17T20:58:59 add pyproject and license
+2025-10-17T21:50:24 handle empty input edge case
