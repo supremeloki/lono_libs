@@ -8,6 +8,7 @@ import inspect
 import pkgutil
 from typing import Dict, Any, List, Type
 from .core import IMetric, Evaluator, ScoreAggregator # Ensure these are imported from core
+__version__ = "1.0.0"
 BASE_PATH = Path(__file__).resolve().parent
 DEV_MODE = os.getenv("LONO_MODE", "prod").lower() in ("dev", "debug")
 _loaded_modules: Dict[str, Any] = {}
