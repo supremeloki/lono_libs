@@ -2,3 +2,4 @@
 2025-10-17T20:58:59 add pyproject and license
 2025-10-17T21:50:24 handle empty input edge case
 2025-10-18T14:01:49 add dataclass contracts
+2025-10-18T20:58:24 wire internal state machine
