@@ -3,3 +3,4 @@
 2025-10-17T21:50:24 handle empty input edge case
 2025-10-18T14:01:49 add dataclass contracts
 2025-10-18T20:58:24 wire internal state machine
+2025-10-19T17:23:05 introduce typed error hierarchy

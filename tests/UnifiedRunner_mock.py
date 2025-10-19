@@ -10,3 +10,6 @@ class IMetric: # Redefining IMetric mock here for standalone execution context
     is_higher_better: bool = False
     weight: float = 0.0
     target_score: Optional[float] = None
+    def calculate(self, y_true: np.ndarray, y_pred: np.ndarray) -> float:
+        raise NotImplementedError
+    def calculate_from_proba(self, y_true: np.ndarray, y_pred_proba: np.ndarray) -> float:
