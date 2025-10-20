@@ -10,3 +10,4 @@ __description__ = "Test suite for Lono Libs evaluation framework"
 TEST_SEED = 42
 DEFAULT_TOLERANCE = 1e-6
 MAX_TEST_SAMPLES = 1000
+import numpy as np
