@@ -8,3 +8,4 @@
 2025-10-20T09:18:48 refactor module boundaries
 2025-10-20T19:56:24 implement core engine
 2025-10-22T12:23:05 harden validation paths
+2025-10-23T18:04:11 introduce typed error hierarchy pt2
