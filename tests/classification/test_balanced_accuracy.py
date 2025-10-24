@@ -16,3 +16,4 @@ class TestBalancedAccuracy(unittest.TestCase):
     def test_perfect_agreement_imbalanced(self):
         y_true = np.array([0, 0, 0, 1])
         y_pred = np.array([0, 0, 0, 1])
+        self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 1.0)
