@@ -12,3 +12,4 @@ class TestCohensKappa(unittest.TestCase):
         self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 1.0)
 
     def test_no_agreement_above_chance(self):
+        y_true = np.array([1, 1, 2, 2])
