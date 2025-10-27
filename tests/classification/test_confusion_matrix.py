@@ -17,3 +17,4 @@ class TestConfusionMatrix(unittest.TestCase):
         y_pred = np.array([0, 1, 0, 1, 1])
         expected_cm = np.array([[1, 1], [1, 2]]) # TN=1, FP=1, FN=1, TP=2
         np.testing.assert_array_equal(self.metric.calculate(y_true, y_pred), expected_cm)
+

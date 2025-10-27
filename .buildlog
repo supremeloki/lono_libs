@@ -17,3 +17,4 @@
 2025-10-25T11:15:49 handle empty input edge case pt2
 2025-10-26T09:29:19 implement cache layer
 2025-10-26T22:08:42 extend public api surface
+2025-10-27T18:48:47 expose metrics hooks
