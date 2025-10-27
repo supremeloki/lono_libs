@@ -18,3 +18,4 @@
 2025-10-26T09:29:19 implement cache layer
 2025-10-26T22:08:42 extend public api surface
 2025-10-27T18:48:47 expose metrics hooks
+2025-10-27T20:18:35 support config overrides
