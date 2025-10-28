@@ -26,3 +26,5 @@ class TestF1Score(unittest.TestCase):
         # False Positives: 1 (y_true=0, y_pred=1)
         # False Negatives: 1 (y_true=1, y_pred=0)
         # True Positives: 2 (y_true=1, y_pred=1)
+        # Precision (0): 1/(1+1)=0.5, Recall (0): 1/(1+1)=0.5, F1(0)=0.5
+        # Precision (1): 2/(1+2)=0.666, Recall (1): 2/(1+1+2)=0.666, F1(1)=0.666
