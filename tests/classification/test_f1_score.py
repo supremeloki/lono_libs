@@ -25,3 +25,4 @@ class TestF1Score(unittest.TestCase):
         # True Negatives: 1 (y_true=0, y_pred=0)
         # False Positives: 1 (y_true=0, y_pred=1)
         # False Negatives: 1 (y_true=1, y_pred=0)
+        # True Positives: 2 (y_true=1, y_pred=1)

@@ -19,3 +19,4 @@
 2025-10-26T22:08:42 extend public api surface
 2025-10-27T18:48:47 expose metrics hooks
 2025-10-27T20:18:35 support config overrides
+2025-10-28T11:43:41 support multiple sources
