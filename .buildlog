@@ -21,3 +21,4 @@
 2025-10-27T20:18:35 support config overrides
 2025-10-28T11:43:41 support multiple sources
 2025-10-28T19:17:39 wire async handlers
+2025-10-29T12:30:59 add cli entrypoint
