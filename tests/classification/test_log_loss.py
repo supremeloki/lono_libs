@@ -17,3 +17,4 @@ class TestLogLoss(unittest.TestCase):
         self.assertAlmostEqual(self.metric.calculate_from_proba(y_true, y_pred_proba), 0.50970, places=5) # Example value
 
     def test_perfect_prediction_multiclass(self):
+        y_true = np.array([0, 1, 2])
