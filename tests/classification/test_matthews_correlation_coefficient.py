@@ -25,3 +25,4 @@ class TestMatthewsCorrelationCoefficient(unittest.TestCase):
         y_true = np.array([0, 0, 1, 1, 0, 1])
         y_pred = np.array([0, 1, 0, 1, 1, 0])
         # Expected MCC for this case is 0.0
+        self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.0)
