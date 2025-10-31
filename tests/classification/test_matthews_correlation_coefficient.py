@@ -24,3 +24,4 @@ class TestMatthewsCorrelationCoefficient(unittest.TestCase):
     def test_random_prediction(self):
         y_true = np.array([0, 0, 1, 1, 0, 1])
         y_pred = np.array([0, 1, 0, 1, 1, 0])
+        # Expected MCC for this case is 0.0
