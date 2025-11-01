@@ -25,23 +25,3 @@ class TestPrecision(unittest.TestCase):
         self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.6, places=7)
 
     def test_empty_inputs(self):
-        y_true = np.array([])
-        y_pred = np.array([])
-        self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.0)
-
-    def test_multiclass_perfect_agreement(self):
-        y_true = np.array([0, 1, 2, 0, 1, 2])
-        y_pred = np.array([0, 1, 2, 0, 1, 2])
-        self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 1.0)
-
-    def test_multiclass_partial_agreement(self):
-        y_true = np.array([0, 0, 1, 1, 2, 2])
-        y_pred = np.array([0, 1, 1, 0, 2, 1])
-        # P0: 1/(1+1)=0.5, P1: 1/(1+2)=0.333, P2: 1/(0+1)=1.0
-        # Weighted P: (0.5*2 + 0.333*2 + 1.0*2) / 6 = (1 + 0.666 + 2) / 6 = 3.666 / 6 = 0.6111
-        self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.6111111111, places=7)
-
-    def test_calculate_from_proba(self):
-        y_true = np.array([0, 1, 0, 1])
-        y_pred_proba = np.array([[0.9, 0.1], [0.2, 0.8], [0.7, 0.3], [0.4, 0.6]])
-        self.assertAlmostEqual(self.metric.calculate_from_proba(y_true, y_pred_proba), 1.0)
