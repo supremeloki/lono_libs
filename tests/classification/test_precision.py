@@ -25,3 +25,4 @@ class TestPrecision(unittest.TestCase):
         self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.6, places=7)
 
     def test_empty_inputs(self):
+        y_true = np.array([])
