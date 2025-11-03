@@ -29,3 +29,4 @@ class TestRecall(unittest.TestCase):
         y_true = np.array([])
         y_pred = np.array([])
         self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.0)
+
