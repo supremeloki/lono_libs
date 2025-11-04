@@ -38,3 +38,4 @@ class TestROCAUC(unittest.TestCase):
             [0.1, 0.8, 0.1],
             [0.1, 0.1, 0.8]
         ])
+        self.assertAlmostEqual(self.metric.calculate_from_proba(y_true, y_pred_proba), 1.0)
