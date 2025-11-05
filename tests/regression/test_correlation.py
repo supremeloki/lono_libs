@@ -36,3 +36,4 @@ class TestCorrelation(unittest.TestCase):
         self.assertTrue(np.isnan(self.metric.calculate(y_true, y_pred))) # pearsonr returns NaN for constant input
         # NOTE: For practical use in UnifiedRunner, you might want to handle NaN by converting to 0.0 or a very low score.
 
+    def test_empty_inputs(self):
