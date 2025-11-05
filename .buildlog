@@ -34,3 +34,4 @@
 2025-11-03T13:58:52 cover error branches
 2025-11-04T09:19:27 regression test for parser
 2025-11-04T19:36:04 fix flaky ordering in tests
+2025-11-05T11:30:08 test streaming backpressure
