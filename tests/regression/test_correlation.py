@@ -37,3 +37,4 @@ class TestCorrelation(unittest.TestCase):
         # NOTE: For practical use in UnifiedRunner, you might want to handle NaN by converting to 0.0 or a very low score.
 
     def test_empty_inputs(self):
+        y_true = np.array([])
