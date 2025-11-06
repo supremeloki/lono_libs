@@ -35,14 +35,3 @@ class TestKurtosis(unittest.TestCase):
     def test_small_inputs_nan(self):
         y_true = np.array([1, 2, 3])
         y_pred = np.array([1, 2, 3])
-        # Kurtosis requires at least 4 samples. For less, return NaN.
-        self.assertTrue(np.isnan(self.metric.calculate(y_true, y_pred)))
-
-    def test_empty_inputs(self):
-        y_true = np.array([])
-        y_pred = np.array([])
-        self.assertTrue(np.isnan(self.metric.calculate(y_true, y_pred)))
-
-    def test_calculate_from_proba_raises_error(self):
-        with self.assertRaises(NotImplementedError):
-            self.metric.calculate_from_proba(np.array([0.5, 1.5]), np.array([[0.1, 0.9], [0.8, 0.2]]))

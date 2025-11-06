@@ -37,3 +37,4 @@
 2025-11-05T11:30:08 test streaming backpressure
 2025-11-05T21:37:58 guard against missing header row
 2025-11-06T18:02:39 fix off-by-one in chunker
+2025-11-06T19:28:54 test grouping edge cases
