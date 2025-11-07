@@ -36,3 +36,4 @@ class TestKurtosis(unittest.TestCase):
         y_true = np.array([1, 2, 3])
         y_pred = np.array([1, 2, 3])
         # Kurtosis requires at least 4 samples. For less, return NaN.
+        self.assertTrue(np.isnan(self.metric.calculate(y_true, y_pred)))

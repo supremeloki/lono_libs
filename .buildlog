@@ -39,3 +39,4 @@
 2025-11-06T18:02:39 fix off-by-one in chunker
 2025-11-06T19:28:54 test grouping edge cases
 2025-11-07T20:38:00 test streaming backpressure pt2
+2025-11-07T22:06:20 cover error branches pt2
