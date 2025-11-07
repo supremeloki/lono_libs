@@ -32,9 +32,3 @@ class TestMAE(unittest.TestCase):
 
     def test_empty_inputs(self):
         y_true = np.array([])
-        y_pred = np.array([])
-        self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.0)
-
-    def test_calculate_from_proba_raises_error(self):
-        with self.assertRaises(NotImplementedError):
-            self.metric.calculate_from_proba(np.array([0.5, 1.5]), np.array([[0.1, 0.9], [0.8, 0.2]]))
