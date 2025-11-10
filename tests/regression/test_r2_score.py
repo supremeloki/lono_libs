@@ -37,3 +37,4 @@ class TestR2Score(unittest.TestCase):
         y_pred = np.array([])
         self.assertAlmostEqual(self.metric.calculate(y_true, y_pred), 0.0)
 
+    def test_calculate_from_proba_raises_error(self):
